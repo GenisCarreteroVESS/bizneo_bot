@@ -64,7 +64,7 @@ python main.py
 Para generar un ejecutable independiente (`.exe` para Windows), utiliza el siguiente comando:
 
 ```
-python -m PyInstaller --onefile --windowed --icon=bizneo_bot.ico --hidden-import=plyer.platforms.win.notification main.py
+python -m PyInstaller --onefile --windowed --icon=bizneo_bot.ico --hidden-import=plyer.platforms.win.notification bizneo_bot.py
 ```
 
 - `--onefile`: genera un único ejecutable.
