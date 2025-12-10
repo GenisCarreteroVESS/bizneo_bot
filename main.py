@@ -5,6 +5,7 @@ from selenium.webdriver import ChromeOptions
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.wait import WebDriverWait
 import time
+import os
 import keyring
 import tkinter as tk
 from tkinter import messagebox
@@ -122,6 +123,8 @@ def get_credentials():
     return email, password
 
 def main():
+    dir_path = os.path.dirname(os.path.realpath(__file__))
+    print(dir_path)
     while True:
         mail, password = get_credentials()
         notification.notify(
@@ -139,11 +142,12 @@ def main():
             keyring.delete_password("bizneo_bot", "password")
         except:
             notification.notify(
-                title="No se pudió registrar Bizneo",
+                title="No se pudo registrar Bizneo",
                 message="Por motivos técnicos no se pudo registrar la jornada laboral a Bizneo",
                 app_name="bizneo_bot",
                 timeout=5  # segons que apareix la notificació
             )
+            break
     
     notification.notify(
         title="Se registró correctamente Bizneo",
