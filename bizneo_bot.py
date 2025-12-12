@@ -107,6 +107,7 @@ def get_credentials():
 
         tk.Label(root, text="Password:").pack()
         entry2 = tk.Entry(root)
+        entry2.config(show="*")
         entry2.pack()
         
         def save_creds():
